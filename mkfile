@@ -28,6 +28,5 @@ BIN=/$objtype/bin
 </sys/src/cmd/mkone
 
 run: 
-	cp 6.out /amd64/platoterm
+	cp $O.out /$cputype/platoterm
 	platoterm
-
