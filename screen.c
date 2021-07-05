@@ -50,9 +50,6 @@ void screen_setup(void)
 {
 	Point size = subpt(screen->r.max, screen->r.min);
 	Rectangle frame = (Rectangle){Pt(0,0),size};
-	
-	if (view != nil)
-		freeimage(view);
 
 	view = allocimage(display,frame,screen->chan,1,backgroundColor);
 }
@@ -61,7 +58,7 @@ void eresized(int new)
 {
 	if (new && getwindow(display, Refnone) < 0)
 		sysfatal("can't reattach to window");
-	screen_setup();
+	screen_update_view();
 }
 
 /**
@@ -84,10 +81,12 @@ void screen_init(void)
 	if (fd >= 0)
 	{
 		fprint(fd,"resize -dx 520 -dy 520"); // gives 512x512 client area.
+		flushimage(display,1);
 		close(fd);
 	}
 
 	eresized(0);
+	screen_setup();
 	ShowPLATO(splash,sizeof(splash));
 	screen_update_view();
 }
