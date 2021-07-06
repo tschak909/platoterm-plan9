@@ -23,7 +23,7 @@ PLATOTERM is a PLATO terminal emulator that has been ported to many platforms, a
 ## Invoking platoterm
 
 ```
-% platoterm -h <hostname> -p [port]
+% platoterm -h <hostname> [-p <port>]
 ```
 
 If -p is not specified, then the port is assumed to be the default ASCII port of 8005.

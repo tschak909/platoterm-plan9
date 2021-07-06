@@ -48,7 +48,7 @@ extern int net;
 
 void usage(void)
 {
-	print("platoterm -h <hostname> -p [port]\n");
+	print("platoterm -h <hostname> [-p <port>]\n");
 	exits("invalid args");
 }
 
