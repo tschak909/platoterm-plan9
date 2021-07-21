@@ -527,7 +527,6 @@ void screen_paint(padPt *Coord)
         int y = Coord->y^0x1FF;
         unsigned long oldpixel;
 
-		USED(x,y,oldpixel);
         /* oldpixel = screen_get_pixel(x,y);
         _screen_paint(x,y,oldpixel,foregroundColor); */
 }
